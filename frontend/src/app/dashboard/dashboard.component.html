@@ -1,0 +1,131 @@
+
+<div class="mt-5 ml-4">
+<div class="row" >
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div>
+                  <h3 class="text-danger">{{perimage}}%</h3>
+                  <p class="mb-0 h4">Images</p>
+                </div>
+                <div class="align-self-center">
+                  <i class="fas fa-mug-hot text-success fa-3x"></i>
+                </div>
+              </div>
+              <div class="px-md-1">
+                <small>{{sizeimage || 0}} of 50mb   </small>
+                <div class="progress mt-1 mb-1 rounded" style="height: 7px;">
+                  <div class="progress-bar bg-danger" role="progressbar" [style.width]="perimage + '%'" aria-valuenow="100"
+                    aria-valuemin="100" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div>
+                  <h3 class="text-info">{{pervideo}}%</h3>
+                  <p class="mb-0 h4">Videos</p>
+                </div>
+                <div class="align-self-center">
+                  <i class="fas fa-mug-hot text-success fa-3x"></i>
+                </div>
+              </div>
+              <div class="px-md-1">
+                <small>{{sizevideo || 0}} of 5gb   </small>
+                <div class="progress mt-1 mb-1 rounded" style="height: 7px;">
+                  <div class="progress-bar bg-info" role="progressbar" [style.width]="pervideo + '%'" aria-valuenow="60"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div>
+                  <h3 class="text-success">{{perdoc }}%</h3>
+                  <p class="mb-0 h4">Documents</p>
+                </div>
+                <div class="align-self-center">
+                  <i class="fas fa-mug-hot text-success fa-3x"></i>
+                </div>
+              </div>
+              <div class="px-md-1">
+                <small>{{sizedoc || 0}} of 5mb   </small>
+                <div class="progress mt-1 mb-1 rounded" style="height: 7px;">
+                  <div class="progress-bar bg-success" role="progressbar" [style.width]="perdoc + '%'" aria-valuenow="60"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+
+<div class="row  ">
+    <div class="col-sm-7 bg-white m-5">
+        <p class ="mt-2 blockquote" >Recents Files :</p>
+        <table class="table mt-1">
+            <thead>
+              <tr>
+                <td scope="col text-secondary">Name</td>
+                <td scope="col text-secondary">Date</td>
+                <td scope="col text-secondary">Size</td>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let file of recentfiles">
+                <td >{{ file.filename }}</td>
+                <td>{{ file.createdAt  |   date:'shortDate'}} </td>
+                <td>{{ file.size }} </td>
+                
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="col-sm-5" >
+       <div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div>
+                  <h3 class="text-danger">{{nbarchivedfile}}</h3>
+                  <p class="mb-0">Archived </p>
+                </div>
+                <div class="align-self-center">
+                  <i class="fas fa-archive text-danger fa-3x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+       <div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div>
+                  <h3 class="text-warning">{{nbstarredfile}}</h3>
+                  <p class="mb-0">Starred </p>
+                </div>
+                <div class="align-self-center">
+                  <i class="fas fa-star text-warning fa-3x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+</div>
